@@ -28,7 +28,7 @@ module Rubyrati
         :inbound_links => e.get_html("//weblog/inboundlinks").to_i,
         :last_update => e.get_html("//weblog/lastupdate").tr_time_to_datetime,
         :title => e.get_html("//title"),
-        :excerpt => e.get_html("//excerpt"),
+        :excerpt => e.get_text("//excerpt"),
         :created => e.get_html("//created"),
         :permalink => e.get_html("//permalink")
       }

@@ -10,6 +10,10 @@ module Hpricot
     def get_html(xpath)
       search(xpath).inner_html
     end
+    
+    def get_text(xpath)
+      search(xpath).inner_text
+    end
   end
 end
 
