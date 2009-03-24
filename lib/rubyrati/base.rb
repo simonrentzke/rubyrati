@@ -37,7 +37,6 @@ module Rubyrati
     def fetch(path, key, *args)
       url = URI.parse("http://api.technorati.com/" + path)
       @complete_url = url.path + key(key) + args.collect{|x| set_arguments(x)}.join
-      puts "SENDING REQUEST TO: #{@complete_url}"
       response = Net::HTTP.start(url.host, url.port) do |http|
         http.get @complete_url, 'User-Agent' => key, 'Accept' => 'text/xml'
       end
